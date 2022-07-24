@@ -29,14 +29,14 @@ jobs:
       - name: Build with Gradle
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
-          context: .
+          workflow-job-context: .
           arguments: build
       
       - name: Uploading JAR file
         uses: actions/upload-artifact@v3
         with:
           name: uploading_jar
-          path: ./build/libs/my-app-1.0-SNAPSHOT.jar
+          path: ./libs/my-app-1.0-SNAPSHOT.jar
   
   dockerbuild:   
     runs-on: ubuntu-latest
